@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://cohs7114t1ok"]
+
+[ext_resource type="Shader" path="res://addons/gdsplash/shaders/pixelate.gdshader" id="1_oofjj"]
+[ext_resource type="Texture2D" uid="uid://d28d1q3nsrxh0" path="res://icon.svg" id="2_tuti1"]
+[ext_resource type="Shader" path="res://addons/gdsplash/shaders/blur.gdshader" id="3_kldl3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f1474"]
+shader = ExtResource("1_oofjj")
+shader_parameter/intensity = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kdv1t"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vbni2"]
+shader = ExtResource("3_kldl3")
+shader_parameter/intensity = 1.0
+
+[node name="Node2D" type="Node2D"]
+material = SubResource("ShaderMaterial_f1474")
+
+[node name="Icon" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_kdv1t")
+position = Vector2(592, 392)
+scale = Vector2(4.625, 3.8125)
+texture = ExtResource("2_tuti1")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_vbni2")
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 128
