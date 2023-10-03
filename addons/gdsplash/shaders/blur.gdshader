@@ -4,9 +4,9 @@ uniform float intensity : hint_range(0.0, 1.0);
 
 uniform sampler2D SCREEN_TEXTURE : hint_screen_texture;
 
-const float SAMPLES = 71.0;
+const float SAMPLES = 35.0;
 const float PI2 = 6.28319;
-const vec2 BLUR_SCALE = vec2(4,4);
+const vec2 BLUR_SCALE = vec2(6,3);
 
 float gaussian(float x) {
 	float x_squared = x * x;
